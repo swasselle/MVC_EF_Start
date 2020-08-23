@@ -1,0 +1,25 @@
+﻿@model Customer;
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Detail DatabaseOperations</title>
+</head>
+<body>
+    <h2>Detail Database operations successful</h2>
+    <h3>@Model.Name</h3>
+
+    @foreach (Order o in Model.Orders)
+    {
+        <p>ID: @(o.Id)</p>
+        <p>Item: @(o.Item.ItemName)</p>
+        <p>Total: @("$" + o.TotalPaid)</p>
+    }
+</body>
+</html>

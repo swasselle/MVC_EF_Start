@@ -10,6 +10,23 @@
     <title>DatabaseOperations</title>
 </head>
 <body>
-  <h2>Database operations successful</h2>
+    <h2>
+        Database operations successful
+    </h2>
+
+    <p>Total Customers: @(ViewData["customer_count"])</p>
+    <p>Total Orders: @(ViewData["order_count"])</p>
+
+    @foreach (Customer c in @Model)
+    {
+        <h3>@c.Name</h3>
+
+        @foreach (Order o in @c.Orders)
+        {
+            <p>ID: @(o.Id)</p>
+            <p>Item: @(o.Item.ItemName)</p>
+            <p>Total: @("$" + o.TotalPaid)</p>
+        }
+    }
 </body>
 </html>
