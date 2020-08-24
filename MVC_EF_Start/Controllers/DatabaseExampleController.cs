@@ -21,31 +21,31 @@ namespace MVC_EF_Start.Controllers
     public IActionResult Index()
     {
             Customer customer1 = new Customer();
-            customer1.Name = "Alex Seufert";
+            customer1.Name = "Sarah Wasselle";
 
             Customer customer2 = new Customer();
-            customer2.Name = "Bruce Wayne";
+            customer2.Name = "Kaleesi";
 
             Item item1 = new Item();
-            item1.ItemName = "Frisbee";
+            item1.ItemName = "Lorinska";
 
             Item item2 = new Item();
-            item2.ItemName = "Batarang";
+            item2.ItemName = "Crishelle";
 
             Order order1 = new Order();
             order1.Customer = customer1;
             order1.Item = item1;
-            order1.TotalPaid = 4.50;
+            order1.TotalPaid = 6.39;
 
             Order order2 = new Order();
             order2.Customer = customer2;
             order2.Item = item2;
-            order2.TotalPaid = 8.75;
+            order2.TotalPaid = 9.27;
 
             Order order3 = new Order();
             order3.Customer = customer2;
             order3.Item = item1;
-            order3.TotalPaid = 5.34;
+            order3.TotalPaid = 3.65;
 
             dbContext.Customers.Add(customer1);
             dbContext.Customers.Add(customer2);
