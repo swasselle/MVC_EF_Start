@@ -24,13 +24,19 @@ namespace MVC_EF_Start.Controllers
             customer1.Name = "Sarah Wasselle";
 
             Customer customer2 = new Customer();
-            customer2.Name = "Kaleesi";
+            customer2.Name = "Lorinska B";
 
             Item item1 = new Item();
-            item1.ItemName = "Lorinska";
+            item1.ItemName = "Dog Food";
 
             Item item2 = new Item();
-            item2.ItemName = "Crishelle";
+            item2.ItemName = "Dog Bowls";
+
+            Item item3 = new Item();
+            item3.ItemName = "Blanket";
+
+            Item item4 = new Item();
+            item4.ItemName = "Towels";
 
             Order order1 = new Order();
             order1.Customer = customer1;
@@ -38,24 +44,32 @@ namespace MVC_EF_Start.Controllers
             order1.TotalPaid = 6.39;
 
             Order order2 = new Order();
-            order2.Customer = customer2;
+            order2.Customer = customer1;
             order2.Item = item2;
-            order2.TotalPaid = 9.27;
+            order2.TotalPaid = 11.75;
 
             Order order3 = new Order();
             order3.Customer = customer2;
-            order3.Item = item1;
-            order3.TotalPaid = 3.65;
+            order3.Item = item3;
+            order3.TotalPaid = 19.27;
+
+            Order order4 = new Order();
+            order4.Customer = customer2;
+            order4.Item = item4;
+            order4.TotalPaid = 13.65;
 
             dbContext.Customers.Add(customer1);
             dbContext.Customers.Add(customer2);
 
             dbContext.Items.Add(item1);
             dbContext.Items.Add(item2);
+            dbContext.Items.Add(item3);
+            dbContext.Items.Add(item4);
 
             dbContext.Orders.Add(order1);
             dbContext.Orders.Add(order2);
             dbContext.Orders.Add(order3);
+            dbContext.Orders.Add(order4);
 
             dbContext.SaveChanges();
             return View();
